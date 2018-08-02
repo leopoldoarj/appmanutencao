@@ -1,23 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<head>
-    <title>Livraria Espírita</title>
-</head>
-
-<h:body>
-    <h:form>
-        <h:panelGrid columns="2">
-            Título: <h:inputText value="#{livroBean.livro.titulo}" />
-            Autor: <h:inputText value="#{livroBean.livro.autor}" />
-            Espírito: <h:inputText value="#{livroBean.livro.espirito}" />
-            Tradutor: <h:inputText value="#{livroBean.livro.tradutor}" />
-            Editora: <h:inputText value="#{livroBean.livro.editora}" />
-            Edição: <h:inputText value="#{livroBean.livro.anoEdicao}" />
-            ISBN: <h:inputText value="#{livroBean.livro.isbn}" />
-
-            <h:commandButton value="Salvar" action="#{livroBean.salva}"/>
-
-        </h:panelGrid>
-    </h:form>
-    <br />
-</h:body>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:h="http://java.sun.com/jsf/html"
+ xmlns:f="http://java.sun.com/jsf/core">
+ <h:head>
+ <title>Cadastro</title>
+ </h:head>
+ <h:body>
+ <h:form>
+ <h:panelGrid columns="3">
+ <h:outputLabel value="Nome:"/>
+ <h:inputText id="nome"  size="20" />
+ <h:message for="nome" />
+ 
+ <h:outputLabel value="Endereçoo:"/>
+ <h:inputText id="end"  size="20"  >
+ <h:message for="end" />
+ 
+ <h:outputLabel value="Número:"/>
+ <h:inputText id="nro"  size="20" />
+ <h:message for="nro" />
+ 
+ <h:outputLabel value="Telefone:"/>
+ <h:inputText id="tel"  size="20" />
+ <h:message for="tel" />
+ 
+ <h:outputLabel value="Cidade:"/>
+ <h:inputText id="mun"  size="20" />
+ <h:message for="mun" />
+ 
+ <h:commandButton id="btnE" value="Enviar" />
+ <h:commandButton id="btnL" value="Limpar"/>
+ 
+ </h:panelGrid>
+ </h:form>
+ </h:body>
+</html>
