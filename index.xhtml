@@ -1,38 +1,131 @@
 <?xml version='1.0' encoding='UTF-8' ?>
+ 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
 <html xmlns="http://www.w3.org/1999/xhtml"
- xmlns:h="http://java.sun.com/jsf/html"
- xmlns:f="http://java.sun.com/jsf/core">
- <h:head>
- <title>Cadastro</title>
- </h:head>
- <h:body>
- <h:form>
- <h:panelGrid columns="3">
- <h:outputLabel value="Nome:"/>
- <h:inputText id="nome"  size="20" />
- <h:message for="nome" />
  
- <h:outputLabel value="Endereçoo:"/>
- <h:inputText id="end"  size="20"  >
- <h:message for="end" />
+xmlns:h="http://java.sun.com/jsf/html"
  
- <h:outputLabel value="Número:"/>
- <h:inputText id="nro"  size="20" />
- <h:message for="nro" />
+xmlns:f="http://java.sun.com/jsf/core">
  
- <h:outputLabel value="Telefone:"/>
- <h:inputText id="tel"  size="20" />
- <h:message for="tel" />
+<h:head>
  
- <h:outputLabel value="Cidade:"/>
- <h:inputText id="mun"  size="20" />
- <h:message for="mun" />
+<title>Cadastro</title>
  
- <h:commandButton id="btnE" value="Enviar" />
- <h:commandButton id="btnL" value="Limpar"/>
+</h:head>
  
- </h:panelGrid>
- </h:form>
- </h:body>
+<h:body>
+ 
+<h:form>
+ 
+<h:panelGrid columns="3">
+ 
+<h:outputLabel value="Nome:"/>
+ 
+<h:inputText id="nome" value="#{pessoaMB.pessoa.nome}" size="20"  required="true" requiredMessage="Campo Obrigatório"/>
+ 
+<h:message for="nome" />
+ 
+<h:outputLabel value="Endereço:"/>
+ 
+<h:inputText id="end" value="#{pessoaMB.pessoa.endereco}" size="20" required="true" requiredMessage="Campo Obrigatório"/>
+ 
+<h:message for="end" />
+ 
+<h:outputLabel value="Número:"/>
+ 
+<h:inputText id="nro" value="#{pessoaMB.pessoa.numero}" size="20" />
+ 
+<h:message for="nro" />
+ 
+<h:outputLabel value="Telefone:"/>
+ 
+<h:inputText id="tel" value="#{pessoaMB.pessoa.telefone}" size="20" />
+ 
+<h:message for="tel" />
+ 
+<h:outputLabel value="Cidade:"/>
+ 
+<h:inputText id="mun" value="#{pessoaMB.pessoa.cidade}" size="20" required="true" requiredMessage="Campo Obrigatório"/>
+ 
+<h:message for="mun" />
+ 
+<h:commandButton id="btnE" value="Enviar" type="submit" action="#{pessoaMB.salvarPessoa}"/>
+ 
+<h:commandButton id="btnL" value="Limpar" type="reset"/>
+ 
+</h:panelGrid>
+ 
+</h:form>
+ 
+<h:panelGrid>
+ 
+<h:dataTable id="tablePessoa" value="#{pessoaMB.pessoaLista}" var="p" title="Pessoas Cadastradas" border="1" rows="10" >
+ 
+<h:column>
+ 
+<f:facet name="header">
+ 
+<h:outputText value="NOME" />
+ 
+</f:facet>
+ 
+<h:outputText value="#{p.nome}"/>
+ 
+</h:column>
+ 
+<h:column>
+ 
+<f:facet name="header">
+ 
+<h:outputText value="ENDEREÇO" />
+ 
+</f:facet>
+ 
+<h:outputText value="#{p.endereco}"/>
+ 
+</h:column>
+ 
+<h:column>
+ 
+<f:facet name="header">
+ 
+<h:outputText value="NÚMERO" />
+ 
+</f:facet>
+ 
+<h:outputText value="#{p.numero}"/>
+ 
+</h:column>
+ 
+<h:column>
+ 
+<f:facet name="header">
+ 
+<h:outputText value="TELEFONE" />
+ 
+</f:facet>
+ 
+<h:outputText value="#{p.telefone}"/>
+ 
+</h:column>
+ 
+<h:column>
+ 
+<f:facet name="header">
+ 
+<h:outputText value="CIDADE" />
+ 
+</f:facet>
+ 
+<h:outputText value="#{p.cidade}"/>
+ 
+</h:column>
+ 
+</h:dataTable>
+ 
+</h:panelGrid>
+ 
+</h:body>
+ 
 </html>
