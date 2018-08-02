@@ -1,37 +1,23 @@
-<HTML>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<HEAD>
+<head>
+    <title>Livraria Espírita</title>
+</head>
 
-<TITLE>Seu título aqui</TITLE>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2">
+            Título: <h:inputText value="#{livroBean.livro.titulo}" />
+            Autor: <h:inputText value="#{livroBean.livro.autor}" />
+            Espírito: <h:inputText value="#{livroBean.livro.espirito}" />
+            Tradutor: <h:inputText value="#{livroBean.livro.tradutor}" />
+            Editora: <h:inputText value="#{livroBean.livro.editora}" />
+            Edição: <h:inputText value="#{livroBean.livro.anoEdicao}" />
+            ISBN: <h:inputText value="#{livroBean.livro.isbn}" />
 
-</HEAD>  
+            <h:commandButton value="Salvar" action="#{livroBean.salva}"/>
 
-<BODY BGCOLOR="FFFFFF">
-
-<CENTER><IMG SRC="clouds.jpg" ALIGN="BOTTOM"> </CENTER>
-
-<HR>
-
-<a href="http://umsitemuitobom.com.br">Nome do Link</a>
-
-é o link para outro site atraente.
-
-<H1>Este é um cabeçalho</H1>
-
-<H2>Este é um cabeçalho médio</H2>
-
-Envie-me um e-mail para <a href="mailto:suporte@suaempresa.com.br">
-
-suporte@suaempresa.com.br</a>.  
-
-<P> Isto é um novo parágrafo!
-
-<P> <B>Este é um parágrafo novo!</B>
-
-<BR> <B><I>Esta é uma nova sentença sem quebra de parágrafo, em negrito e itálico.</I></B>  
-
-<HR>
-
-</BODY>  
-
-</HTML> 
+        </h:panelGrid>
+    </h:form>
+    <br />
+</h:body>
